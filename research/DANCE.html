@@ -1,0 +1,232 @@
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="../css/font-awesome.min.css"type="text/css">
+
+<!-- Custom CSS -->
+<link href="../css/modern-business.css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="../css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="../js/html5shiv.js"></script>
+<script src="../js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menucollapse.js"></script>
+<script type="text/javascript" src="../js/arrow78.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+
+
+<div class="container" style="max-width: 1100px;">
+
+    <br>
+
+    <h2 class="text-center"><a href="https://arxiv.org/pdf/2002.07953.pd"><b>Universal Domain Adaptation through Self-Supervision (NeurIPS2020) </b></h2>
+
+    <h3 class="text-center"><a href="http://cs-people.bu.edu/keisaito/">Kuniaki Saito<sup>1</a>, <a href="https://cs-people.bu.edu/donhk/">Donghyun Kim<sup>2</a>, <a href="https://www.cs.bu.edu/~sclaroff/">Stan Sclaroff<sup>1</a>, <a href="http://ai.bu.edu/ksaenko.html">Kate Saenko<sup>1,2</a></h3>
+
+    <h4 class="text-center">1: Boston University, 2: MIT-IBM Watson AI Lab</h4>
+    <h4 class="text-center"><a href="https://arxiv.org/pdf/2002.07953.pdf">[Paper] </a><a href="https://github.com/VisionLearningGroup/DANCE"> [Code]</a></h4>
+
+    <br>
+    <br>
+ <h3><b> Problem: Dataset Bias</b></h3>
+     <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <!--<div class="col-md-6">-->
+                    <p class="text-center">
+                        <i>
+                        <img src="../images/dance/dataset_bias.jpg"  width=600px class="center">
+                        <figcaption>Figure.1: The example of dataset bias. A model trained on a specific domain often perform poorly on other domains.</figcaption>
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+                <!--</div>-->
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-md-12">
+            <p>
+<h4>
+
+            Supervised machine learning relies on a training set with many labeled examples,
+            and assumes that, at test time, new unlabelled examples that the trained model is asked to
+            label will come from the same distribution as the training examples. However, in practice,
+            this is not true — training datasets are almost always biased in some way and are not representative
+            of all possible future input data that the system will see at test time. Such “dataset bias” results in
+            reduced accuracy on the target domain. In this work we propose a domain adaptation method to reduce such
+            domain bias using self-supervised learning on the unlabeled target domain data.
+</h4>
+
+            </p>
+        </div>
+    </div>
+ <h3><b>Universal Domain Adaptation: Towards Practical Domain Adaptation</b></h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <!--<div class="col-md-6">-->
+                    <p class="text-center">
+                        <i>
+                        <img src="../images/dance/problem_setting.jpg"  width=1000px class="center">
+                        <figcaption>Figure.2: In universal domain adaptation, any of the four category-shifts can happen.The model cannot know which setting is happening during training. </figcaption>
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+                <!--</div>-->
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+<h4>
+               In domain adaptation, we aim to transfer the source domain's knowledge to the target
+               in a way that achieves high accuracy on the target. One of the difficulty in achieving
+               practical domain adaptation is the potential category shift between source and target domains:
+               the target domain may have classes that are absent in the source (open-set adaptation), or some
+               source classes may be absent in the target (partial adaptation), or the classes may be the same
+              (closed-set adaptation.) Various methods have been proposed to solve each setting, but what if we
+              do not know the number of classes in the unlabeled target data? There is currently no adaptation method
+              that works for any label shift. Besides, methods tailored for a specific setting can catastrophically fail
+              in other settings. Therefore, to achieve a practical learning system, a method that works well on any arbitrary
+              setting is necessary. We call this <b> "Universal Domain Adaptation" </b>.
+</h4>
+
+            </p>
+        </div>
+    </div>
+
+    <br>
+     <h3><b>Idea</b></h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/dance/fig1.jpg" class="center" width=1000px>
+                        <figcaption>Figure.3: Two losses proposed in this work.
+                            Neighborhood clustering loss extracts discriminative target features.
+                            Entropy separation loss can align target samples to the source or reject them as unknown. </figcaption>
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <h4>
+            Our proposed DANCE framework consists of two novel ideas —
+            a self-supervised loss and weak distribution alignment (Figure 2.)
+            The first idea is a new unsupervised clustering technique, <b>Neighborhood Clustering Loss</b>,
+            which does not require knowledge of the number of classes in the target. As we mentioned,
+            knowing the number of classes can be hard since the target domain is an unlabeled. However,
+            if we perform clustering within the target domain, the model will learn to extract discriminative
+            features. This technique is helpful in all sub-settings of Universal DA. The second idea is a weak
+            alignment loss, <b>Entropy Separation Loss</b>, which can align known-class target samples to the source
+            and also can reject unknown-class samples.
+
+            </h4>
+            </p>
+        </div>
+    </div>
+
+         <h3><b>Experiments</b></h3>
+    <h3>Overview</h3>
+     <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/dance/result_dance.jpg" class="center" width=1000px>
+                              </i>
+                    </p>
+                    <p class="text-center"> </p>
+                </div>
+            <div class="row">
+
+            </div>
+        </div>
+
+    </div>
+
+         <div class="col-md-12">
+             <p>
+                 <h4>
+
+                DANCE shows the best or the second performance in these adaptation settings.
+                 DANCE is the only method that performs better than the source model in all cases.
+             </h4>
+
+             </p>
+         </div>
+    <h3>Analysis by clustering perspective</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/dance/result_clustering.jpg" class="center" width=1000px>
+                              </i>
+                    </p>
+                    <p class="text-center"> </p>
+                </div>
+            <div class="row">
+
+            </div>
+    <div class="col-md-12">
+             <p>
+                 <h4>
+        We evaluate how well our proposed method is effective to cluster target samples for both classes
+        shared with source (known) and classes absent in the source (novel).
+        For both classes, our method improves the performance compared to ImageNet pre-trained model.
+        On the other hand, other baselines (SO, DANN) harms performnace on novel classes.
+             </h4>
+             </p>
+         </div>
+
+
+    <br>
+            <br>
+    <br>
+    <h3>Reference</h3>
+    <div class="row">
+
+        <div class="col-md-12">
+<pre>
+    @inproceedings{saito2020dance,
+    title={Universal Domain Adaptation through Self-Supervision},
+    author={Saito, Kuniaki and Kim, Donghyun and Sclaroff, Stan and Saenko, Kate},
+    journal={NeurIPS},
+    year={2020}
+    }
+
+</pre>
+        </div>
+    </div>

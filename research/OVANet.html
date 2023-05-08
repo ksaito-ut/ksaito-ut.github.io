@@ -1,0 +1,184 @@
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="../css/font-awesome.min.css"type="text/css">
+
+<!-- Custom CSS -->
+<link href="../css/modern-business.css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="../css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="../js/html5shiv.js"></script>
+<script src="../js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menucollapse.js"></script>
+<script type="text/javascript" src="../js/arrow78.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+
+
+<div class="container" style="max-width: 1100px;">
+
+    <br>
+
+    <h2 class="text-center"><a href="https://arxiv.org/pdf/2104.03344v3.pdf"><b>OVANet: One-vs-All Network for Universal Domain Adaptation </b></h2>
+
+    <h3 class="text-center"><b>ICCV2021 </b></h3>
+
+    <h3 class="text-center"><a href="http://cs-people.bu.edu/keisaito/">Kuniaki Saito<sup>1</a>,  <a href="http://ai.bu.edu/ksaenko.html">Kate Saenko<sup>1,2</a></h3>
+
+    <h4 class="text-center">1: Boston University, 2: MIT-IBM Watson AI Lab</h4>
+    <h4 class="text-center"><a href="https://arxiv.org/pdf/2104.03344v3.pdf">[Paper] </a><a href="https://github.com/VisionLearningGroup/OVANet"> [Code]</a></h4>
+
+    <br>
+    <br>
+ <h3><b> Problem: Dataset Bias</b></h3>
+     <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <!--<div class="col-md-6">-->
+                    <p class="text-center">
+                        <i>
+                        <img src="../images/dance/dataset_bias.jpg"  width=600px class="center">
+                        <figcaption>Figure.1: The example of dataset bias. A model trained on a specific domain often perform poorly on other domains.</figcaption>
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+                <!--</div>-->
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-md-12">
+            <p>
+<h4>
+
+            Supervised machine learning relies on a training set with many labeled examples,
+            and assumes that, at test time, new unlabelled examples that the trained model is asked to
+            label will come from the same distribution as the training examples. However, in practice,
+            this is not true — training datasets are almost always biased in some way and are not representative
+            of all possible future input data that the system will see at test time. Such “dataset bias” results in
+            reduced accuracy on the target domain. In this work we propose a domain adaptation method to reduce such
+            domain bias using self-supervised learning on the unlabeled target domain data.
+</h4>
+
+            </p>
+        </div>
+    </div>
+ <h3><b>Problem in Universal DA: How can we set the threshold to identify novel categories?</b></h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <!--<div class="col-md-6">-->
+                    <p class="text-center">
+                        <i>
+                        <img src="../images/ovanet/animation_ovanet.gif"  width=1000px class="center">
+
+                        </i>
+                    </p>
+                    <p class="text-center">  </p>
+                <!--</div>-->
+            </div>
+            <h4>Figure.2: In universal domain adaptation, the target domain can contain categories absent in the source (novel categories). But, we do not know how many of them are novel ones.
+                        Center: Existing methods manually set the threshold by validation or using the ratio of novel samples, which is not realistic. Right: We propose to utilize one-vs-all classification.</figcaption></h4>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <br>
+     <h3><b>Idea: Margin between classes can be a good threshold! Train one-vs-all classifiers!</b></h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/ovanet/ovanet_idea.png" class="center" width=800px>
+
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+            </div>
+             <h4> Figure.3: We assume that the margin between classes can be a good threshold to identify novel categories. To exploit the margin, we propose to train one-vs-all classifiers for each class. </h4>
+
+            <div class="row">
+            </div>
+        </div>
+    </div>
+
+ <h3><b>Advantages of OVANet</b></h3>
+<ul>
+  <li><h4>No need to manually select the threshold to reject unknown samples. </h4></li>
+  <li><h4>Much less hyper-parameters. </h4></li>
+</ul>
+
+
+     <h3><b>Experiments1: Varying number of unknown classes. </b></h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/ovanet/result1_ovanet.png" class="center" width=800px>
+
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+            </div>
+            <h4>Exp1. Experiments on Office dataset by varying the number of unknown classes. Our method performs better or comparable to baseline methods across different number of unknown classes. </h4>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+     <h3><b>Experiments2: Results on large scale datasets. </b></h3>
+
+      <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/ovanet/result2_ovanet.png" class="center" width=800px>
+
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+            </div>
+            <h4>OVANet outperforms other baselines in both settings. Note that OVANet is using the same hyper-parameters for all settings while some baselines are tuning them for each setting. </h4>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+
+    <h3>Reference</h3>
+    <div class="row">
+
+        <div class="col-md-12">
+<pre>
+    @article{saito2021ovanet,
+  title={OVANet: One-vs-All Network for Universal Domain Adaptation},
+  author={Saito, Kuniaki and Saenko, Kate},
+  journal={arXiv preprint arXiv:2104.03344},
+  year={2021}
+}
+
+</pre>
+        </div>
+    </div>

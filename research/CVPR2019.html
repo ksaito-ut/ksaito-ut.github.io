@@ -1,0 +1,170 @@
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="../css/font-awesome.min.css"type="text/css">
+
+<!-- Custom CSS -->
+<link href="../css/modern-business.css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="../css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="../js/html5shiv.js"></script>
+<script src="../js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menucollapse.js"></script>
+<script type="text/javascript" src="../js/arrow78.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+
+
+<div class="container" style="max-width: 1100px;">
+
+    <br>
+
+    <h2 class="text-center"><a href="https://arxiv.org/pdf/1812.04798.pdf">Strong Weak Distribution Alignment for Adaptive Object Detection (CVPR2019)</h2>
+
+    <h3 class="text-center"><a href="http://cs-people.bu.edu/keisaito/">Kuniaki Saito<sup>1</a>, <a href="https://yoshitakaushiku.net/">Yoshitaka Ushiku<sup>2</a>, <a href="https://www.mi.t.u-tokyo.ac.jp/harada/">Tatsuya Harada<sup>2,3</a>, <a href="http://ai.bu.edu/ksaenko.html">Kate Saenko<sup>1</a></h3>
+
+    <h4 class="text-center">1: Boston University, 2: The University of Tokyo, 3: RIKEN</h4>
+    <h4 class="text-center"><a href="https://arxiv.org/pdf/1812.04798.pdf">[Paper] </a><a href="https://github.com/ksaito-ut/DA_Detection"> [Code]</a></h4>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center">
+                        <img src="../images/swda/swda.png" class="img-rounded" height=500px>
+                    </p>
+                    <p class="text-center"> </p>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <h3>Abstract</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+          We propose an approach for unsupervised adaptation of object detectors from label-rich to label-poor domains which can significantly reduce annotation costs associated with detection. Recently, approaches that align distributions of source and target images using an adversarial loss have been proven effective for adapting object classifiers. However, for object detection, fully matching the entire distributions of source and target images to each other at the global image level may fail, as domains could have distinct scene layouts and different combinations of objects. On the other hand, strong matching of local features such as texture and color makes sense, as it does not change category level semantics. This motivates us to propose a novel approach for detector adaptation based on strong local alignment and weak global alignment. We empirically verify the effectiveness of our approach on several detection datasets comprising both large and small domain shifts.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center">
+                        <img src="../images/swda/fig1_swda.png" class="img-rounded" height=250px>
+                    </p>
+                    <p class="text-center"><b>Figure 1. </b> Feature visualization by our proposed weak distribution alignment. </p>
+                </div>
+                <div class="col-md-5">
+                    <p class="text-center"><img src="../images/swda/fig_swda2.png"
+                        class="img-rounded" height=250px></p>
+                    <p class="text-center"><b>Figure 2. </b>  Overview of our proposed method.</p>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+    <h3>Overview</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+          Our method consists of <b>"weak alignment"</b> for global-image features in high level layer and <b>"strong alignment"</b> for local-image features in low-level layer in detetion network. The overview of the method is Figure 2. Weak alignment achieves partially align image features as shown in Figure 1.
+            </p>
+        </div>
+    </div>
+     <h3>Results on Adaptation between Dissimilar Domains</h3>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center">
+                        <img src="../images/swda/result1.png" class="img-rounded" height=600px>
+                    </p>
+                    <p class="text-center"> </p>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+         <h3>Results on Adaptation between Similar Domains</h3>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center">
+                        <img src="../images/swda/result2.png" class="img-rounded" height=250px>
+                    </p>
+                    <p class="text-center"> </p>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+ <h3>Visualization by GradCam</h3>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center">
+                        <img src="../images/swda/result3.png" class="img-rounded" height=500px>
+                    </p>
+                    <p class="text-center"> </p>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+
+    <h3><a href="https://github.com/VisionLearningGroup/DA_Detection">Code</a></h3>
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+
+
+
+    <h3>Reference</h3>
+    <div class="row">
+
+        <div class="col-md-12">
+<pre>
+  @article{saito2018strong,
+  title={Strong-Weak Distribution Alignment for Adaptive Object Detection},
+  author={Saito, Kuniaki and Ushiku, Yoshitaka and Harada, Tatsuya and Saenko, Kate},
+  journal={CVPR2019},
+  year={2018}
+}
+</pre>
+        </div>
+    </div>

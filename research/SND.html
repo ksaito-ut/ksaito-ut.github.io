@@ -1,0 +1,256 @@
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="../css/font-awesome.min.css"type="text/css">
+
+<!-- Custom CSS -->
+<link href="../css/modern-business.css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="../css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="../js/html5shiv.js"></script>
+<script src="../js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menucollapse.js"></script>
+<script type="text/javascript" src="../js/arrow78.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+
+
+<div class="container" style="max-width: 1100px;">
+
+    <br>
+
+    <h2 class="text-center"><a href="https://arxiv.org/pdf/2108.10860.pdf"><b>Tune it the Right Way: Unsupervised Validation of Domain Adaptation via Soft Neighborhood Density </b></h2>
+
+    <h3 class="text-center"><b>ICCV2021 </b></h3>
+
+    <h3 class="text-center"><a href="http://cs-people.bu.edu/keisaito/">Kuniaki Saito<sup>1</a>, <a href="https://cs-people.bu.edu/donhk/">Donghyun Kim<sup>1</a>, <a href="https://www.cs.bu.edu/~sclaroff/">Stan Sclaroff<sup>1</a>, <a href="https://people.eecs.berkeley.edu/~trevor/">Trevor Darrell<sup>2</a>, <a href="http://ai.bu.edu/ksaenko.html">Kate Saenko<sup>1,3</a></h3>
+
+    <h4 class="text-center">1: Boston University, 2: University of California, Berkeley, 3: MIT-IBM Watson AI Lab</h4>
+    <h4 class="text-center"><a href="https://arxiv.org/pdf/2108.10860.pdf">[Paper] </a> <a href="https://github.com/VisionLearningGroup/SND"> [Code]</a> <a href=""> [Slides]</a> </h4>
+
+
+    <br>
+    <br>
+ <span style="color:darkblue"><h3><b> Dataset bias and unsupervised domain adaptation</b></h3> </span>
+     <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <!--<div class="col-md-6">-->
+                    <p class="text-center">
+                        <i>
+                        <img src="../images/dance/dataset_bias.jpg"  width=600px class="center">
+                    <p class="text-center"> Figure.1: The example of dataset bias. A model trained on a specific domain often perform poorly on other domains. </p>
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+                <!--</div>-->
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-md-12">
+            <p>
+<h4>
+            Supervised machine learning needs a lot of labeled examples.
+            Test sets can be from distributions different from training data.
+           Such “dataset bias” results in reduced accuracy on the test (target) domain.
+            Unsupervised domain adaptation aims to reduce the bias by using unlabeled target data.
+
+</h4>
+
+            </p>
+        </div>
+    </div>
+ <span style="color:darkblue"><h3><b>Problem: How can we set an appropriate hyper-parameter to train a model?</b></h3></span>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <!--<div class="col-md-6">-->
+                    <p class="text-center">
+                        <i>
+                        <img src="../images/SND/snd_problem.png"  width=800px class="center">
+
+                        </i>
+                    </p>
+                    <p class="text-center">  </p>
+                <!--</div>-->
+            </div>
+
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+<h4>Given the assumption that we do not have labeled data in the target domain, it is hard to pick a suitable hyper-parameter to train the model.</h4>
+
+
+    <br>
+    <span style="color:darkblue"> <h3><b>Related Work: Entropy to measure the discriminative target representations.</b></h3></span>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/SND/snd_entropy.png" class="center" width=800px>
+
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+            </div>
+             <h4> </h4>
+
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <h4>Entropy of the classifier measures uncertainty in prediction. Smaller entropy indicates discriminative target features. <br>
+    But, entropy cannot detect the case where target samples are wrongly aligned (Figure) since it does not consider any relationship between samples.
+    Then, can we make a criterion that considers how discriminative target features are by using the relationship between samples nearby?</h4>
+
+
+     <span style="color:darkblue;text-align: left"> <h3><b>Intuition for Soft Neighborhood Density (SND)</b></h3></span>
+     <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/SND/snd_intuition.png" class="center" width=600px>
+
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+            </div>
+             <h4> </h4>
+
+            <div class="row">
+            </div>
+        </div>
+
+    </div>
+    <h4>Given a well-adapted model, target samples of the same class nearby will form dense neighborhoods.
+    Our criterion identifies samples classified into the same class in a soft manner and measure their density. </h4>
+
+    <span style="color:darkblue;text-align: left"><h3><b>Computing SND</b></h3></span>
+<div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/SND/snd_compute.png" class="center" width=1000px>
+
+                        </i>
+                    </p>
+                    <p class="text-center"> </p>
+            </div>
+             <h4> </h4>
+
+            <div class="row">
+            </div>
+        </div>
+ <h4>1. Extract target features from the last softmax output. The output is class-discriminative and suitable to identify samples in the same class
+     in a soft manner. <br>
+     2. Compute similarity between target samples. <br>
+     3. Apply softmax with temperature to the similarity matrix. The obtained probability distribution shows which samples are close with each other.
+     Since we are using classification output as input features and applying tempeature scaling to ignore dissimilar samples, the distribution shows similarity to samples nearby.<br>
+     4. Compute entropy of the distribution. Larger entropy indicates that the samples are tightly clustered since the probability will be uniform within the cluster. We pick a model with large entropy.
+
+      <span style="color:darkblue;text-align: left"> <h3><b>Discussion: advantage and limitation</b></h3></span>
+    <h4>1. The criterion can consider how well target samples are clustered, thus can
+     avoid some failure cases. <br>
+2. The model needs to be trained for some iterations to make SND work well.
+     E.g., softmax output is almost uniform before training. <br>
+3. We observe that all criteria we tested (including SND) is not so effective
+     to tune some hyper-parameters such as learning rate on the source samples
+     and layer-wise learning rate setting. <br>
+</h4>
+     <span style="color:darkblue;text-align: left"> <h3><b>Results on partial domain adaptation</b></h3></span>
+
+     <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/SND/snd_result_partial.png" class="center" width=1000px>
+
+                        </i>
+                    </p>
+
+                    <p class="text-center"> We test on four adaptation methods and can see 3.3% improvement over baselines.</p>
+            </div>
+             <h4> </h4>
+
+            <div class="row">
+            </div>
+        </div>
+         <span style="color:darkblue;text-align: left"> <h3><b>Results on semantic segmentation </b></h3></span>
+
+     <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/SND/snd_result_seg.png" class="center" width=400px>
+
+                        </i>
+                    </p>
+
+                    <p class="text-center">SND is effective to find hyper-parameters for semantic segmentation too.</p>
+            </div>
+             <h4> </h4>
+
+            <div class="row">
+            </div>
+        </div>
+
+  <span style="color:darkblue;text-align: left"> <h3><b>SND and Accuracy</b></h3></span>
+
+
+ <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                    <p class="text-center">
+                         <i>
+                        <img src="../images/SND/snd_curve.png" class="center" width=1200px>
+
+                        </i>
+                    </p>
+
+                    <p class="text-center">SND tracks accuracy better than baseline methods.</p>
+            </div>
+             <h4> </h4>
+
+            <div class="row">
+            </div>
+        </div>
+
+
+
+<span style="color:darkblue;text-align: left"> <h3><b>Reference</b></h3></span>
+    <div class="row">
+
+        <div class="col-md-12">
+<pre>
+@article{saito2021tune,
+  title={Tune it the Right Way: Unsupervised Validation of Domain Adaptation via Soft Neighborhood Density},
+  author={Saito, Kuniaki and Kim, Donghyun and Teterwak, Piotr and Sclaroff, Stan and Darrell, Trevor and Saenko, Kate},
+  journal={arXiv preprint arXiv:2108.10860},
+  year={2021}
+}
+
+</pre>
+        </div>
+    </div>

@@ -1,0 +1,140 @@
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="../css/font-awesome.min.css"type="text/css">
+
+<!-- Custom CSS -->
+<link href="../css/modern-business.css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="../css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="../js/html5shiv.js"></script>
+<script src="../js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menucollapse.js"></script>
+<script type="text/javascript" src="../js/arrow78.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+
+
+<div class="container" style="max-width: 1100px;">
+
+    <br>
+
+    <h2 class="text-center"><a href="https://arxiv.org/abs/1904.06487">Semi-supervised Domain Adaptation via Minimax Entropy (ICCV2019)</h2>
+
+    <h3 class="text-center"><a href="http://cs-people.bu.edu/keisaito/">Kuniaki Saito<sup>1</a>, <a href="https://cs-people.bu.edu/donhk/">Donghyun Kim<sup>2</a>, <a href="https://www.cs.bu.edu/~sclaroff/">Stan Sclaroff<sup>1</a>, <a href="https://people.eecs.berkeley.edu/~trevor/">Trevor Darrell<sup>2</a>,<a href="http://ai.bu.edu/ksaenko.html">Kate Saenko<sup>1</a></h3>
+
+    <h4 class="text-center">1: Boston University, 2: University of California, Berkeley</h4>
+    <h4 class="text-center"><a href="https://arxiv.org/abs/1904.06487">[Paper] </a><a href="https://github.com/VisionLearningGroup/SSDA_MME"> [Code]</a></h4>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center">
+                        <img src="../images/mme/fig1.png" class="img-rounded" height=400px>
+                    </p>
+                    <p class="text-center"> </p>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <h3>Abstract</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+          Contemporary domain adaptation methods are very effective at aligning feature distributions of source and target domains without any target supervision. However, we show that these techniques perform poorly when even a few labeled examples are available in the target. To address this semi-supervised domain adaptation (SSDA) setting, we propose a novel Minimax Entropy (MME) approach that adversarially optimizes an adaptive few-shot model. Our base model consists of a feature encoding network, followed by a classification layer that computes the features' similarity to estimated prototypes (representatives of each class). Adaptation is achieved by alternately maximizing the conditional entropy of unlabeled target data with respect to the classifier and minimizing it with respect to the feature encoder. We empirically demonstrate the superiority of our method over many baselines, including conventional feature alignment and few-shot methods, setting a new state of the art for SSDA.
+            </p>
+        </div>
+    </div>
+
+    <h3>Overview</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+            Classifier tries to <b>"maximize"</b> entropy of the unlabeled target examples while the feature encoder tries to <b>"minimize"</b> it. The overview of the method is described below. We utilize the architecture which has L2 normalization before last fully connected layer.
+            </p>
+        </div>
+    </div>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center">
+                        <img src="../images/mme/MME_Pipeline.png" class="img-rounded" height=350px>
+                    </p>
+                    <p class="text-center"> </p>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+         <h3>Results</h3>
+         <div class="col-md-12">
+             <p>
+             Our method performed better than other baselines (See left table). The obtained features are well-clustered with our method (See right figures). In the top row, the target features are visualized. Different colors denote different classes. The black plots are the prototype vector of our network. We can see the features are well-clustered around the prototype. In the bottom row, we show target (blue) and source (red) features. With our method, the target features are well-aligned with source ones.
+             </p>
+         </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center">
+                        <img src="../images/mme/fig_mme.png" class="img-rounded" height=300px>
+                    </p>
+                    <p class="text-center"> </p>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <h3><a href="https://github.com/VisionLearningGroup/SSDA_MME">Code</a></h3>
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+
+
+
+    <h3>Reference</h3>
+    <div class="row">
+
+        <div class="col-md-12">
+<pre>
+  @article{saito2019semi,
+    title={Semi-supervised Domain Adaptation via Minimax Entropy},
+    author={Saito, Kuniaki and Kim, Donghyun and Sclaroff, Stan and Darrell, Trevor and Saenko, Kate},
+    journal={ICCV},
+    year={2019}
+  }
+</pre>
+        </div>
+    </div>

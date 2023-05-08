@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>[ Kuniaki Saito's Webpage ]</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- Custom CSS -->
+<!--<link href="css/modern-business.css" rel="stylesheet">-->
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/main.css">
+<!--<link href="css/custom.css" rel="stylesheet">-->
+<!--<link rel="stylesheet" href="css/main.css">-->
+
+<!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/menucollapse.js"></script>
+<script type="text/javascript" src="js/arrow78.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+<body id="page-top" class="index">
+
+
+
+
+<!-- Navigation -->
+<<nav class="navbar navbar-inverse navbar-fixed-top">
+<!-- <nav class="navbar navbar-default navbar-fixed-top">-->
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                       <span class="sr-only">Toggle navigation</span>
+                       <span class="glyphicon glyphicon-search"></span>
+            </button>
+
+            <button id="button2" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <span><a href="#"><img border="0" height="50" src="images/sapienza.png"/></a></span>
+        </div>-->
+        <a class="navbar-brand" href="index.html">Kuniaki Saito's Webpage</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                  <li class="page-scroll">
+                      <a href="index.html">Home</a>
+                  </li>
+
+                <li class="dropdown">
+                <li class="page-scroll">
+                    <a href="projects.html">Research Project</a>
+                </li>
+                <!-- <li class="page-scroll">
+                <a href="index.html#advising">Advising</a>
+                </li> -->
+                <!-- <li class="page-scroll">
+                    <a target="_blank" href="">Grants</a>
+                </li> -->
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+
+    </div><!-- /.container-fluid -->
+</nav>
+
+<section>
+    <!-- Place this tag where you want the search results to render -->
+    <gcse:searchresults-only></gcse:searchresults-only>
+</section>
+
+<!-- Home Section -->
+<section id="home" style="margin-top:40px">
+<div class="container">
+        <div align="left" class="col-md-3">
+            <a target="_blank" href="">
+                <img id="mobile-img" src="images/image_ksaito.jpeg" width="200" border="0" height="200" alt=""></a>
+
+        </div>
+        <div align="left" class="col-md-4">
+            <h3>Kuniaki Saito
+                <h4>Ph.D Student Boston University, Computer Science, IVC Group</h4></h3>
+  <h4>
+            Email:
+            <script language="JavaScript">
+                <!--
+                document.write("&nbsp;");
+                spiderjam('keisaito','bu.edu');
+                -->
+            </script><br/>
+
+            <a href="https://scholar.google.co.jp/citations?user=2X0cwhkAAAAJ&hl=en"><img src="https://img.icons8.com/material-sharp/32/000000/google-scholar.png" title="Google Scholar", style="display: inline"/></a><a href="cv_public.pdf"><img src="https://img.icons8.com/windows/32/000000/google-sheets.png" title="cv", style="display: inline"/></a><a href="https://www.linkedin.com/in/kuniaki-saito-6a8691aa/"><img src="https://img.icons8.com/windows/32/000000/linkedin.png" title="Linkedin", style="display: inline"/></a>
+
+            </h4>
+        </div>
+
+
+        <!--<p><a href="#" class="btn btn-primary">More &raquo;</a></p>-->
+        <i class="expandshow" style="display:none;" id="tab-1">
+            <button class="btn btn-primary btn-lg btn-block" style="width: 100%;" onclick="javascript:$('.allshow').show();$('.noshow').hide();$('.collapseshow').show();$('.expandshow').hide();">EXPAND ALL SECTIONS <span class="glyphicon glyphicon-chevron-down"></span></button>
+        </i>
+        <i class="collapseshow" style="display:none;" id="tab-1">
+            <button class="btn btn-primary btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('.allshow').hide();$('.noshow').show();$('.expandshow').show();$('.collapseshow').hide();">COLLAPSE ALL SECTIONS <span class="glyphicon glyphicon-chevron-up"></span></button>
+        </i>
+
+    </div>
+</section>
+
+<!-- Home Section -->
+<section id="intro">
+    <div class="container lead">
+        <div style="text-align: left; margin-top:10px" class="col-md-12">
+            <!--<h2>Welcome!</h2>-->
+            <i class="noshow" style="display:none;" id="tab-1">
+            <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('#tab-1-content').toggle();">Introduction <span class="glyphicon glyphicon-chevron-right"></span></button>
+            </i>
+
+            <div class="allshow" style="display:none;" id="tab-1-content">
+            <hr class="star-primary">
+            <p>
+          <!--  <p class="lead">-->
+               I joined <a href="http://www.bu.edu/cs/ivc/IVC " target="_blank"> Image and video computing group </a>, in 2018. I am a Ph.D student advised by <a href="http://ai.bu.edu/ksaenko.html" target="_blank">Prof. Kate Saenko</a>.
+I received Master degree from the University of Tokyo. I worked on domain adaptation with Prof. Tatsuya Harada and Dr. Yoshitaka Ushiku. My research interest focuses on label-efficient and domain generalizable computer vision models. </p>
+            </div>
+
+        </div>
+    </div>
+
+<!-- News Section -->
+<section id="News">
+    <div class="container lead">
+        <hr class="star-primary">
+        <div style="text-align: left; margin-top:10px" class="col-md-12">
+          <!--  <i class="noshow" style="display:none;" id="tab-3">
+                <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('#tab-3-content').toggle();">Publications  <span class="glyphicon glyphicon-chevron-right"></span></button>
+            </i>
+            <div class="allshow" style="display:none;" id="tab-3-content">
+            <hr class="star-primary">
+-->
+            <h2>News</h2>
+            <ul>
+          <li>[2020/09/25] Our new paper, <a href="https://arxiv.org/pdf/2002.07953.pdf">Universal Domain Adaptation through Self Supervision</a>, is accepted to Neurlps2020!</li>
+          <li>[2019/07/24] Our paper, <a href="https://arxiv.org/pdf/1904.06487.pdf">Semi-supervised Domain Adaptation via Minimax Entropy</a>, is accepted by ICCV2019!</li>
+          <li>[2019/05] Started research internship at Nvidia Santa Clara. </li>
+          <li>[2019/02/24] Our paper, <a href="https://arxiv.org/abs/1812.04798">Strong-Weak Distribution Alignment for Adaptive Object Detection</a>, is accepted by CVPR2019!</li>
+          <li>[2018/12/15] Our new paper, <a href="https://arxiv.org/abs/1812.04798">Strong-Weak Distribution Alignment for Adaptive Object Detection</a>, is now on arxiv.</li>
+          <li>[2018/09/04] I started to work at Boston.</li>
+          <li>[2018/07] Our paper, "Open Set Domain Adaptation by Backpropagation", was accepted to ECCV 2018.</li>
+          </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Award Section -->
+<section id="awards">
+    <div class="container lead">
+        <div style="text-align: left; margin-top:10px" class="col-md-12">
+
+            <!-- <i class="noshow" style="display:none;" id="tab-3">
+                <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('#tab-3-content').toggle();">Publications  <span class="glyphicon glyphicon-chevron-right"></span></button>
+            </i> -->
+            <div class="allshow" style="display:none;" id="tab-3-content">
+            <hr class="star-primary">
+            <h2>Awards</h2>
+            <ul>
+          <li>UTokyo-TOYOTA Study Abroad Scholarship 2017</li>
+          <li>NVIDIA Pioneering Research Awards at ICML 2017</li>
+          </ul>
+          <hr class="star-primary">
+          <h2>Talks</h2>
+          <ul>
+          <li>Invited to present “Asymmetric tri-training for Unsupervised Domain Adaptation” at MIRU 2017 (assigned to senior due to schedule conflict)</li>
+          <li>Invited to present “Asymmetric tri-training for Unsupervised Domain Adaptation” at IBIS 2017 </li>
+          <li>Invited to present “Maximum Classifier Discrepancy for Unsupervised Domain Adaptation” at MIRU 2018 </li>
+          </ul>
+          <hr class="star-primary">
+          <h2>Other</h2>
+          <ul>
+          <li>CVPR2019, ICCV2019, TPAMI, IJCV Reviewer</li>
+
+          </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<hr class="star-primary">
+<footer>
+    <small>
+    <center>
+        © 2018 | Kuniaki Saito. Credits: AR template
+    <a onclick="javascript:$('#credit').toggle();"><img border="0" src="images/ccby.png"/></a>
+    <div style="display:none;" id="credit">[AR template available under Creative Commons CC BY 4.0 licence:
+    <a href="https://github.com/dmsl/academic-responsive-template"_blank">
+        https://github.com/dmsl/academic-responsive-template
+    </a> ]
+    </div>
+    </center>
+    </small>
+</footer>
+
+</body>
+
+</html>
